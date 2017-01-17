@@ -1,0 +1,20 @@
+{
+  "name": "merver",
+  "version": "0.0.1",
+  "description": "A Mock API server that takes serves a YAML definition of sequenced APIs",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --recursive",
+    "start": "node server.js"
+  },
+  "author": "Stephen Raghunath",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "marked": "^0.3.6",
+    "morgan": "^1.7.0",
+    "node-markdown": "^0.1.1",
+    "yamljs": "^0.2.8"
+  }
+}
