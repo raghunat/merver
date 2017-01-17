@@ -7,6 +7,14 @@
     "test": "mocha --recursive",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raghunat/merver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/raghunat/merver/issues",
+    "email": "raghunat@fredonia.edu"
+  },
   "author": "Stephen Raghunath",
   "license": "ISC",
   "dependencies": {
