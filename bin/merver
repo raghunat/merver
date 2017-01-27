@@ -6,7 +6,7 @@ const YAML = require('yamljs');
 
 // setup merver if file provided
 if (process.argv[2]) {
-  let yamlContent = fs.readFileSync(process.argv[2]);
+  let yamlContent = fs.readFileSync(process.argv[2], 'utf8');
   app.merver.rawYAML = yamlContent;
   app.merver.definition = YAML.parse(yamlContent);
 }
