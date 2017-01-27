@@ -2,6 +2,7 @@
 'use strict';
 const fs = require('fs');
 const app = require('../app');
+const YAML = require('yamljs');
 
 // setup merver if file provided
 if (process.argv[2]) {
