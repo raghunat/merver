@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const path = require('path');
 const md = require('marked');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 // Instantiate app
 const app = express();
 
@@ -23,6 +23,9 @@ app.use(morgan('dev'));
 // for parsing application/json or application/x-www-form-urlencoded
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+// allow cors
+app.use(cors());
 
 // Send Instructions
 app.get('/', function(req, res) {
