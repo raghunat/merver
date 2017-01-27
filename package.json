@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A Mock API server that takes serves a YAML definition of sequenced APIs",
   "main": "bin/merver",
+  "bin": {
+    "merver": "./bin/merver"
+  },
   "scripts": {
     "test": "mocha --recursive",
     "start": "node bin/merver"
