@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+'use strict';
+const fs = require('fs');
+const app = require('../app');
+
+// setup merver if file provided
+if (process.argv[2]) {
+  let yamlContent = fs.readFileSync(process.argv[2]);
+  app.merver.rawYAML = yamlContent;
+  app.merver.definition = YAML.parse(yamlContent);
+}
+
+// Start Server.
+app.listen(process.env.PORT || 3000, () => console.log('Merver is Movin\'!'));
