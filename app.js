@@ -14,7 +14,7 @@ const app = express();
 const readme = md(fs.readFileSync(path.join(__dirname, 'README.md'), 'utf8'));
 
 // create a write stream (in append mode)
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'})
+const accessLogStream = fs.createWriteStream('access.log'), {flags: 'a'})
 
 // setup the logger
 app.use(morgan('combined', {stream: accessLogStream}))
