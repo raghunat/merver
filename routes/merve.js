@@ -8,14 +8,14 @@ const path = require('path');
  * @param app Injected instantiated express server app
  * @returns {object} Express Router
  */
-module.exports = function(app) {
+module.exports = function (app) {
   let router = express.Router();
 
   /**
    * Performs a simple update
    * @param response
    */
-  let performUpdateIfNeeded = function(response) {
+  let performUpdateIfNeeded = function (response) {
     // No Update needed
     if (!response.update) {
       return;
@@ -40,7 +40,7 @@ module.exports = function(app) {
    * @param req
    * @param res
    */
-  let merve = function(req, res) {
+  let merve = function (req, res) {
     // Simulate http
     setTimeout(() => {
       if (!app.merver.definition) {
@@ -75,7 +75,7 @@ module.exports = function(app) {
 
             // Check for iterations or infinite items for response looping
             if (!currentResponse.infinite && currentResponse.used && (!currentResponse.times || currentResponse.times === currentResponse.used)) {
-              currentResponse = undefined; // reset
+              // currentResponse = undefined; // reset
               continue;
             }
 
