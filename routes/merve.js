@@ -54,6 +54,24 @@ module.exports = function (app) {
       let currentUrl = Object.keys(app.merver.definition.routes).find(r => r === req.baseUrl);
       let route = currentUrl ? app.merver.definition.routes[currentUrl] : undefined;
 
+      // On request find matching redirection
+      if (app.merver.definition.redirections) {
+        let currentRedirection = Object.keys(app.merver.definition.redirections).find(r => r === req.baseUrl);
+        let redirection = currentRedirection ? app.merver.definition.redirections[currentRedirection] : undefined;
+
+        if (redirection) {
+            let query = Object.keys(req.query).map(function(key) {
+                return key + '=' + req.query[key];
+            }).join('&');
+
+            if(redirection.redirect_to) {
+                return res.redirect(redirection.redirect_to + '?' + query);
+            } else {
+                return res.status(400).send('Your definition is missing the redirect_to attribute');
+            }
+        }
+      }
+
       // send back if not found
       if (!route) {
         return res.status(404).json({
